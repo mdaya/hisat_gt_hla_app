@@ -15,6 +15,7 @@ rm -r ${base_name}
 
 #Extract reads from chr6 MHC region and all unmapped reads to fastq
 ls -alh $cram_file_name
+ls -alh ${cram_file_name}.crai
 touch ${sample_id}_MHC.bam 
 touch ${sample_id}_unmapped.bam 
 touch ${sample_id}_extract.bam 
