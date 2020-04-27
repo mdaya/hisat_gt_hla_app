@@ -1,0 +1,15 @@
+{
+    "cram_input": {
+        "class": "File",
+        "format": "http://edamontology.org/format_3462",
+        "path": "/tmp/hisat_run_files/NWD873518.b38.irc.v1.cram"
+    },
+    "ref_file_input": {
+        "class": "File",
+        "path": "/tmp/hisat_run_files/hisat_gt_ref.tar.gz"
+    },
+    "bamstats_report": {
+        "class": "File",
+        "path": "/tmp/assembly_graph-hla-NWD873518_extract.report"
+    }
+}
