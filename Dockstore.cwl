@@ -15,7 +15,7 @@ dct:creator:
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "quay.io/mdaya/hisat_gt_hla_app:0.1"
+    dockerPull: "quay.io/mdaya/hisat_gt_hla_app:0.4"
 
 hints:
   - class: ResourceRequirement 
@@ -35,13 +35,8 @@ inputs:
     format: "http://edamontology.org/format_3462" 
     inputBinding:
       position: 2
+    secondaryFiles: .crai
   
-  crai_input:
-    type: File
-    doc: "The index CRAI file of the input CRAM file"
-    inputBinding:
-      position: 3
-
 outputs:
   hla_type_report:
     type: File

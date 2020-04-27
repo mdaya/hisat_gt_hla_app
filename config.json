@@ -6,14 +6,16 @@
     "cram_input": {
         "class": "File",
         "format": "http://edamontology.org/format_3462",
-        "path": "/tmp/hisat_run_files/NWD873518.b38.irc.v1.cram"
-    },
-    "crai_input": {
-        "class": "File",
-        "path": "/tmp/hisat_run_files/NWD873518.b38.irc.v1.cram.crai"
+        "path": "/tmp/hisat_run_files/NWD873518.b38.irc.v1.cram",
+        "secondaryFiles": [
+            {
+               "path" : "/tmp/hisat_run_files/NWD873518.b38.irc.v1.cram.crai",
+               "class" : "File"
+            }
+        ]
     },
     "bamstats_report": {
         "class": "File",
-        "path": "/tmp/assembly_graph-hla-NWD873518_extract.report"
+        "path": "assembly_graph-hla-NWD873518_extract.report"
     }
 }
