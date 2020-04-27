@@ -20,21 +20,27 @@ requirements:
 hints:
   - class: ResourceRequirement 
     coresMin: 1
-    ramMin: 8184  # "the process requires at least 8G of RAM"
+    ramMin: 8184  # "the process requires at least 8GB of RAM"
 
 inputs:
-  cram_input:
-    type: File
-    doc: "The CRAM file used as input"
-    format: "http://edamontology.org/format_3462" 
-    inputBinding:
-      position: 2
-
   ref_file_input:
     type: File
     doc: "tar.gz file containing reference files required by HISAT-genotype"
     inputBinding:
+      position: 1
+
+  cram_input:
+    type: File
+    doc: "The CRAM file to use as input"
+    format: "http://edamontology.org/format_3462" 
+    inputBinding:
       position: 2
+  
+  crai_input:
+    type: File
+    doc: "The index CRAI file of the input CRAM file"
+    inputBinding:
+      position: 3
 
 outputs:
   hla_type_report:

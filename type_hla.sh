@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Set the input file names
-cram_file_name=$1
-ref_file_tar_name=$2
+ref_file_tar_name=$1
+cram_file_name=$2
 
 #Extract sample ID from input CRAM
 sample_id=`basename $cram_file_name | cut -f1 -d"."`
