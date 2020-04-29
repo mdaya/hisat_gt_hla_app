@@ -15,7 +15,7 @@ dct:creator:
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "quay.io/mdaya/hisat_gt_hla_app:1.0"
+    dockerPull: "quay.io/mdaya/hisat_gt_hla_app:1.02"
 
 hints:
   - class: ResourceRequirement 
