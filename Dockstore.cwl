@@ -3,7 +3,7 @@
 class: CommandLineTool
 id: "HISAT-genotype"
 label: "HISAT-genotype HLA tool"
-cwlVersion: v1.1
+cwlVersion: v1.0
 doc: |
     ![build_status](https://quay.io/repository/hisat_gt_hla_app/status)
     A tool for calling HLA alleles from whole genome sequence CRAM files. 
