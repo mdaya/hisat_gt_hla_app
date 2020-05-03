@@ -20,15 +20,19 @@ RUN mkdir /home/biodocker/picard && \
 RUN git clone https://github.com/DaehwanKimLab/hisat-genotype /home/biodocker/hisat-genotype && \
     cd /home/biodocker/hisat-genotype && \
     git checkout hisatgenotype_v1.1.3 && \
-    make hisat2-align-s hisat2-build-s hisat2-inspect-s && \
-    echo 'export PATH="/home/biodocker/hisat-genotype:/home/biodocker/hisat-genotype/hisatgenotype_scripts:$PATH"' >> /home/biodocker/.bashrc && \
-    echo 'export PYTHONPATH="${PYTHONPATH}:/home/biodocker/hisat-genotype/hisatgenotype_modules/"' >> /home/biodocker/.bashrc
+    make hisat2-align-s hisat2-build-s hisat2-inspect-s 
 
 #Install pipeline script
 RUN mkdir /home/biodocker/hisat_genotype_run
-COPY type_hla.sh /home/biodocker/hisat_genotype_run
+COPY extract_reads.sh /home/biodocker/hisat_genotype_run
+COPY type_hisat_hla.sh /home/biodocker/hisat_genotype_run
 USER root
-RUN chmod a+x /home/biodocker/hisat_genotype_run/type_hla.sh
+RUN chmod a+x /home/biodocker/hisat_genotype_run/type_hisat_hla.sh
+RUN chmod a+x /home/biodocker/hisat_genotype_run/extract_reads.sh
 USER biodocker
+
+#Set environment variables
+RUN echo 'export PATH="/home/biodocker/hisat-genotype:/home/biodocker/hisat-genotype/hisatgenotype_scripts:/home/biodocker/hisat_genotype_run/:$PATH"' >> /home/biodocker/.bashrc && \
+    echo 'export PYTHONPATH="${PYTHONPATH}:/home/biodocker/hisat-genotype/hisatgenotype_modules/"' >> /home/biodocker/.bashrc
 
 CMD ["/bin/bash"]
