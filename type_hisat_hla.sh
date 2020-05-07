@@ -9,6 +9,7 @@
 #Input parameters
 fq_1=$1
 fq_2=$2
+hisat_gt_ref_files_dir=$3
 sample_id=`basename $fq_1 | cut -f1 -d"_"` 
 
 #Output parameters
@@ -19,7 +20,8 @@ log_file_name=${sample_id}_type_hisat_hla_log.txt
 SECONDS=0
 
 #TODO: remove the below - check if reference files have been copied
-echo "Checking for reference files..." > $log_file_name
+echo "Checking for reference files that should be in $hisat_gt_ref_files_dir ..." > $log_file_name
+mv $hisat_gt_ref_files_dir/* .
 ls hla*  &>> $log_file_name
 ls *genome*  &>> $log_file_name
 
