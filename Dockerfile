@@ -30,6 +30,7 @@ COPY test_arguments.sh /home/biodocker/hisat_genotype_run
 USER root
 RUN chmod a+x /home/biodocker/hisat_genotype_run/type_hisat_hla.sh
 RUN chmod a+x /home/biodocker/hisat_genotype_run/extract_reads.sh
+RUN chmod a+x /home/biodocker/hisat_genotype_run/test_arguments.sh
 USER biodocker
 
 #Set environment variables
