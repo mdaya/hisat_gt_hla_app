@@ -23,7 +23,8 @@ shift
 for file in "$@"
 do
   echo "Moving $file to current directory ..." >> $log_file_name
-  mv $file .
+  target_file=`basename $file`
+  ln -s $file $target_file
 done
 #TODO: remove the below - check if reference files have been copied
 ls hla*  &>> $log_file_name
